@@ -7,12 +7,6 @@ bot.on('ready', () => {
     console.log(`${bot.user.tag} je to ready!`)
 })
 
-client.on('message', gotMessage);
-
-function gotMessage(msg){
-  console.log(msg);
-}
-
 bot.on('message', message => {
     if(message.content === prefix + 'ping') {
       setInterval(function() {
@@ -84,4 +78,11 @@ if(message.content === prefix + 'spam') {
   }
 })
        
-bot.login("token")
+bot.login("Nzg3NTkzNTc5NjYzOTgyNjIy.X9XNrg.4gcyHQhxic9OzT-ZIIj61s2XcxY")
+
+
+bot.on('message', gotMessage);
+
+function gotMessage(msg){
+  console.log(msg);
+}
