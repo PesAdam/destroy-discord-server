@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client();
 const prefix = '$';
+require('dotenv').config();
 
 
 bot.on('ready', () => {
@@ -29,12 +30,12 @@ bot.on('message', message => {
     
     }
     
-$
+
      if(message.content === prefix + 'create') {
       setInterval(function() {
       message.guild.createChannel('text-text-text', 'text')
       message.guild.createChannel('hahahhaha', 'voice')
-      message.guild.createChannel('sleduj ma na IG - pes_adam', 'category')
+      message.guild.createChannel('sleduj ma na IG - br4ve.mov', 'category')
     }),
     1
   }
@@ -83,17 +84,13 @@ if(message.content === prefix + 'spam') {
   if(message.content === '$info') {
   const xinfo = new Discord.RichEmbed()
   .setTitle("Informations")
-  .setDescription("**FOLOW TO MY IG - pes_adam**")
+  .setDescription("**FOLOW TO MY IG - br4ve.mov**")
   .setColor("RANDOM")
   message.channel.send(xinfo)
   }
 })
 
-
-       
-bot.login("Nzg3NTkzNTc5NjYzOTgyNjIy.X9XNrg.TCrDA5RAmZIx3v2XMX5Et_fcukY")
-
-
+bot.login(process.env.TOKEN)
 bot.on('message', gotMessage);
 
 function gotMessage(msg){
